@@ -1,6 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import AnimatedShinyText from "./magicui/animated-shiny-text";
+import { cn } from "@/lib/utils";
 
 interface Props {
   title: string;
@@ -42,7 +44,18 @@ export function EventCard({
         )}
         <div className="flex flex-row items-center gap-2">
           <h2 className="font-semibold leading-none">{title}</h2>
-          {win && <Badge variant="award">🏆{win}🏆</Badge>}
+
+          {win && (
+            <div
+              className={cn(
+                "group rounded-full border border-black/5 bg-neutral-100 text-sm text-neutral transition-all ease-in hover:cursor-default hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800 pl-2 pr-3"
+              )}
+            >
+              <AnimatedShinyText className="transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+                🏆{win}
+              </AnimatedShinyText>
+            </div>
+          )}
         </div>
         {location && (
           <p className="text-sm text-muted-foreground">{location}</p>
