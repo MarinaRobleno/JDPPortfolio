@@ -132,14 +132,7 @@ export default function Page() {
           </BlurFade>
           <div className="relative">
             <HeroVideoDialog
-              className="dark:hidden block"
-              animationStyle="from-center"
-              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
-              thumbnailSrc="/render.png"
-              thumbnailAlt="Render"
-            />
-            <HeroVideoDialog
-              className="hidden dark:block"
+              className="block"
               animationStyle="from-center"
               videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
               thumbnailSrc="/render.png"
@@ -183,14 +176,18 @@ export default function Page() {
                   I see two potential career areas that greatly interest me and
                   where I would love the opportunity to learn and develop my
                   skills: Environmental Artist and QA Tester. Both positions are
-                  excellent entry points into the video game industry. As an
-                  Environmental Artist, I could immerse myself in the creative
-                  process, contributing to the design and atmosphere of game
-                  worlds, which is crucial for player immersion. On the other
-                  hand, working as a QA Tester would provide me with a deep
-                  understanding of game mechanics and quality assurance
-                  processes, ensuring a polished and enjoyable experience for
-                  players.
+                  excellent entry points into the video game industry.
+                  <br />
+                  <br />
+                  As an Environmental Artist, I could immerse myself in the
+                  creative process, contributing to the design and atmosphere of
+                  game worlds, which is crucial for player immersion.
+                  <br />
+                  <br />
+                  On the other hand, working as a QA Tester would provide me
+                  with a deep understanding of game mechanics and quality
+                  assurance processes, ensuring a polished and enjoyable
+                  experience for players.
                 </p>
               </div>
             </div>
@@ -248,6 +245,7 @@ export default function Page() {
                 >
                   {DATA.contact.social.X.name}
                 </Link>
+                .
               </p>
             </div>
           </BlurFade>

@@ -45,12 +45,12 @@ export const DATA = {
 
         navbar: true,
       },
-      email: {
+      Email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:javierdomingo99@gmail.com",
         icon: Icons.email,
 
-        navbar: false,
+        navbar: true,
       },
     },
   },
