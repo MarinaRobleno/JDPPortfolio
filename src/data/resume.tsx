@@ -262,4 +262,20 @@ export const DATA = {
       ],
     },
   ],
+  careers: [
+    {
+      title: "Environment Artist",
+      active: true,
+      description:
+        "As an Environment Artist, I could immerse myself in the creative process, contributing to the design and atmosphere of game worlds, which is crucial for player immersion.",
+      icon: "🏞️",
+    },
+    {
+      title: "QA Tester",
+      active: true,
+      description:
+        "On the other hand, working as a QA Tester would provide me with a deep understanding of game mechanics and quality assurance processes, ensuring a polished and enjoyable experience for players.",
+      icon: "🔍",
+    },
+  ],
 } as const;

@@ -1,3 +1,4 @@
+import { CareerCard } from "@/components/career-card";
 import { EventCard } from "@/components/event-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -213,24 +214,32 @@ export default function Page() {
                   Ideal Career
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Environmental Artist and QA Tester
+                  Environment Artist and QA Tester
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   I see two potential career areas that greatly interest me and
                   where I would love the opportunity to learn and develop my
-                  skills: Environmental Artist and QA Tester. Both positions are
+                  skills: Environment Artist and QA Tester. Both positions are
                   excellent entry points into the video game industry.
-                  <br />
-                  <br />
-                  As an Environmental Artist, I could immerse myself in the
-                  creative process, contributing to the design and atmosphere of
-                  game worlds, which is crucial for player immersion.
-                  <br />
-                  <br />
-                  On the other hand, working as a QA Tester would provide me
-                  with a deep understanding of game mechanics and quality
-                  assurance processes, ensuring a polished and enjoyable
-                  experience for players.
+                </p>
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+                  {DATA.careers.map((career, id) => (
+                    <BlurFade
+                      key={career.title}
+                      delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                    >
+                      <CareerCard
+                        key={career.title}
+                        title={career.title}
+                        description={career.description}
+                        icon={career.icon}
+                      />
+                    </BlurFade>
+                  ))}
+                </div>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Nevertheless, I am open to any opportunity that allows me to
+                  grow and strengthen my skills in the video game industry.
                 </p>
               </div>
             </div>
@@ -245,7 +254,7 @@ export default function Page() {
                 Contact
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                Get in Touch!
+                Let's get in touch!
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 You can reach me at{" "}
@@ -260,7 +269,7 @@ export default function Page() {
                   href={DATA.contact.social.LinkedIn.url}
                   className="text-blue-500 hover:underline"
                 >
-                  Linkedin
+                  LinkedIn
                 </Link>{" "}
                 or{" "}
                 <Link
