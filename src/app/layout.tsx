@@ -8,6 +8,7 @@ import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import Meteors from "@/components/magicui/meteors";
 import Sidebar from "@/components/sidebar";
+import BackToTop from "@/components/back-to-top";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -69,6 +70,7 @@ export default function RootLayout({
             {children}
             <Sidebar />
             <Navbar />
+            <BackToTop />
           </TooltipProvider>
         </ThemeProvider>
       </body>
