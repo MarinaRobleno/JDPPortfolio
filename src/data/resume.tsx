@@ -4,7 +4,7 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Javier Domingo Pacheco",
   initials: "JDP",
-  url: "https://dillion.io",
+  url: "https://www.linkedin.com/in/javier-domingo-pacheco-3171b7208/",
   location: "Madrid, Spain",
   locationLink: "https://www.google.com/maps/place/madrid",
   description:
