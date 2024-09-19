@@ -8,7 +8,7 @@ export const DATA = {
   location: "Madrid, Spain",
   locationLink: "https://www.google.com/maps/place/madrid",
   description:
-    "Expert Technical Artist. Video Game Creation and Narration. 3D animation for video games and interactive environments.",
+    "Expert Technical Artist. Video Game Creation and Narration. 3D Animation for Video Games and Interactive Environments.",
   summary:
     "Since I was a child, I have been fascinated by the stories and adventures that the world of video games has offered me. So much so that, at a certain point, I decided to take a step forward and become a part of what excited me so much, in order to convey and share feelings and emotions with other gaming enthusiasts like myself. \n On a personal level, I consider myself a perfectionist, perseverant, and creative person. I am also very accustomed to working in teams, taking on responsibilities, and facing new challenges.",
   avatarUrl: "/me.png",

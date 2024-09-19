@@ -1,6 +1,7 @@
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -22,7 +23,7 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]}! 🎮`}
               />
               <BlurFadeText
                 className="max-w-[600px] md:text-xl"
@@ -41,7 +42,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
+          <h2 className="text-xl font-bold">About me</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
@@ -123,13 +124,28 @@ export default function Page() {
                   Check out my latest work
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I&apos;ve worked on a variety of projects, from simple
-                  websites to complex web applications. Here are a few of my
-                  favorites.
+                  During the last years, I&apos;ve worked on a variety of
+                  projects. Here are a few of my favorites.
                 </p>
               </div>
             </div>
           </BlurFade>
+          <div className="relative">
+            <HeroVideoDialog
+              className="dark:hidden block"
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
+              thumbnailSrc="/render.png"
+              thumbnailAlt="Render"
+            />
+            <HeroVideoDialog
+              className="hidden dark:block"
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
+              thumbnailSrc="/render.png"
+              thumbnailAlt="Render"
+            />
+          </div>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
@@ -152,29 +168,34 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section id="hackathons">
+      <section id="objectives">
         <div className="space-y-12 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 13}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  Hackathons
+                  Desired positions
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  I like building things
+                  Environmental Artist and QA Tester
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  During my time in university, I attended{" "}
-                  {DATA.hackathons.length}+ hackathons. People from around the
-                  country would come together and build incredible things in 2-3
-                  days. It was eye-opening to see the endless possibilities
-                  brought to life by a group of motivated and passionate
-                  individuals.
+                  I see two potential career areas that greatly interest me and
+                  where I would love the opportunity to learn and develop my
+                  skills: Environmental Artist and QA Tester. Both positions are
+                  excellent entry points into the video game industry. As an
+                  Environmental Artist, I could immerse myself in the creative
+                  process, contributing to the design and atmosphere of game
+                  worlds, which is crucial for player immersion. On the other
+                  hand, working as a QA Tester would provide me with a deep
+                  understanding of game mechanics and quality assurance
+                  processes, ensuring a polished and enjoyable experience for
+                  players.
                 </p>
               </div>
             </div>
           </BlurFade>
-          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+          {/* <BlurFade delay={BLUR_FADE_DELAY * 14}>
             <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
               {DATA.hackathons.map((project, id) => (
                 <BlurFade
@@ -192,7 +213,7 @@ export default function Page() {
                 </BlurFade>
               ))}
             </ul>
-          </BlurFade>
+          </BlurFade> */}
         </div>
       </section>
       <section id="contact">
