@@ -29,7 +29,6 @@ export const DATA = {
   ],
   contact: {
     email: "javierdomingo99@gmail.com",
-    tel: "+34 646 15 42 88",
     social: {
       LinkedIn: {
         name: "LinkedIn",
