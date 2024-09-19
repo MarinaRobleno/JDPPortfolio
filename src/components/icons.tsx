@@ -1,8 +1,25 @@
-import { GlobeIcon, MailIcon } from "lucide-react";
+import {
+  GlobeIcon,
+  MailIcon,
+  User,
+  LibraryBig,
+  BicepsFlexed,
+  FolderOpenDot,
+  Trophy,
+  BriefcaseBusiness,
+  Phone,
+} from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
+  user: (props: IconProps) => <User {...props} />,
+  education: (props: IconProps) => <LibraryBig {...props} />,
+  skills: (props: IconProps) => <BicepsFlexed {...props} />,
+  projects: (props: IconProps) => <FolderOpenDot {...props} />,
+  events: (props: IconProps) => <Trophy {...props} />,
+  career: (props: IconProps) => <BriefcaseBusiness {...props} />,
+  contact: (props: IconProps) => <Phone {...props} />,
   globe: (props: IconProps) => <GlobeIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
   linkedin: (props: IconProps) => (

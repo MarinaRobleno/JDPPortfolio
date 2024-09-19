@@ -27,6 +27,35 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     // { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
+  sidebar: [
+    { name: "about", label: "About", href: "/#about", icon: Icons.user },
+    {
+      name: "education",
+      label: "Education",
+      href: "/#education",
+      icon: Icons.education,
+    },
+    { name: "skills", label: "Skills", href: "/#skills", icon: Icons.skills },
+    {
+      name: "projects",
+      label: "My Projects",
+      href: "/#projects",
+      icon: Icons.projects,
+    },
+    { name: "events", label: "Events", href: "/#events", icon: Icons.events },
+    {
+      name: "careers",
+      label: "Ideal Career",
+      href: "/#careers",
+      icon: Icons.career,
+    },
+    {
+      name: "contact",
+      label: "Contact",
+      href: "/#contact",
+      icon: Icons.contact,
+    },
+  ],
   contact: {
     email: "javierdomingo99@gmail.com",
     social: {

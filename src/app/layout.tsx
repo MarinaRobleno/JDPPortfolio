@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
 import Meteors from "@/components/magicui/meteors";
+import Sidebar from "@/components/sidebar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
           <TooltipProvider delayDuration={0}>
             <Meteors number={30} />
             {children}
+            <Sidebar />
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
