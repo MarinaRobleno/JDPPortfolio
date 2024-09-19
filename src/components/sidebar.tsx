@@ -13,10 +13,7 @@ export default function Sidebar() {
   return (
     <div className="fixed top-1/2 -translate-y-1/2 left-20 z-30 h-[320px] w-[200px]">
       <BlurFade delay={BLUR_FADE_DELAY * 10}>
-        <Dock
-          direction="left"
-          className="z-50 h-full w-full flex flex-col items-start justify-start p-4 overflow-y-auto border-none rounded-lg" 
-        >
+        <Dock className="z-50 h-full w-full flex flex-col items-start justify-start p-4 overflow-y-auto border-none rounded-lg">
           {DATA.sidebar.map((item) => (
             <Link
               key={item.href} // Add a key for each item to avoid React warnings
