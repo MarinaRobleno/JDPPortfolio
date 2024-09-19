@@ -15,6 +15,7 @@ interface Props {
   title: string;
   href?: string;
   description: string;
+  win?: string;
   dates: string;
   tags: readonly string[];
   link?: string;

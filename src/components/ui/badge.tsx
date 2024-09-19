@@ -15,6 +15,8 @@ const badgeVariants = cva(
         destructive:
           "border-transparent bg-destructive text-destructive-foreground shadow hover:bg-destructive/80",
         outline: "text-foreground",
+        // backroung color should be light yellow
+        award: "border-transparent bg-blue-100 text-blue-900 shadow hover:bg-blue-200 cursor-default",
       },
     },
     defaultVariants: {
