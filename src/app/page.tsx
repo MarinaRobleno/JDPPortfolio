@@ -222,21 +222,23 @@ export default function Page() {
                   skills: Environment Artist and QA Tester. Both positions are
                   excellent entry points into the video game industry.
                 </p>
-                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-                  {DATA.careers.map((career, id) => (
-                    <BlurFade
+              </div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+                {DATA.careers.map((career, id) => (
+                  <BlurFade
+                    key={career.title}
+                    delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                  >
+                    <CareerCard
                       key={career.title}
-                      delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                    >
-                      <CareerCard
-                        key={career.title}
-                        title={career.title}
-                        description={career.description}
-                        icon={career.icon}
-                      />
-                    </BlurFade>
-                  ))}
-                </div>
+                      title={career.title}
+                      description={career.description}
+                      icon={career.icon}
+                    />
+                  </BlurFade>
+                ))}
+              </div>
+              <div className="space-y-2">
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Nevertheless, I am open to any opportunity that allows me to
                   grow and strengthen my skills in the video game industry.
