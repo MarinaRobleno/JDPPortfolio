@@ -11,7 +11,8 @@ import {
   HomeIcon,
   DownloadIcon,
   FileText,
-  Languages
+  Languages,
+  Lightbulb
 } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -21,12 +22,13 @@ export const Icons = {
   download: (props: IconProps) => <DownloadIcon {...props} />,
   home: (props: IconProps) => <HomeIcon {...props} />,
   user: (props: IconProps) => <User {...props} />,
+  work: (props: IconProps) => <BriefcaseBusiness {...props} />,
   education: (props: IconProps) => <LibraryBig {...props} />,
   languages: (props: IconProps) => <Languages {...props} />,
   skills: (props: IconProps) => <BicepsFlexed {...props} />,
   projects: (props: IconProps) => <FolderOpenDot {...props} />,
   events: (props: IconProps) => <Trophy {...props} />,
-  career: (props: IconProps) => <BriefcaseBusiness {...props} />,
+  career: (props: IconProps) => <Lightbulb {...props} />,
   contact: (props: IconProps) => <Phone {...props} />,
   globe: (props: IconProps) => <GlobeIcon {...props} />,
   email: (props: IconProps) => <MailIcon {...props} />,
