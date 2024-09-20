@@ -28,6 +28,7 @@ export const DATA = {
     // { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   sidebar: [
+    { name: "home", label: "Home", href: "#home", icon: Icons.home },
     { name: "about", label: "About", href: "#about", icon: Icons.user },
     {
       name: "education",
@@ -53,7 +54,7 @@ export const DATA = {
       name: "contact",
       label: "Contact",
       href: "#contact",
-      icon: Icons.contact,
+      icon: Icons.email,
     },
   ],
   contact: {

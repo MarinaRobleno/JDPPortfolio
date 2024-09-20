@@ -8,11 +8,13 @@ import {
   Trophy,
   BriefcaseBusiness,
   Phone,
+  HomeIcon
 } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
+  home: (props: IconProps) => <HomeIcon {...props} />,
   user: (props: IconProps) => <User {...props} />,
   education: (props: IconProps) => <LibraryBig {...props} />,
   skills: (props: IconProps) => <BicepsFlexed {...props} />,
