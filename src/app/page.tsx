@@ -140,7 +140,7 @@ export default function Page() {
               thumbnailAlt="Render"
             />
           </div>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
                 key={project.title}
@@ -159,7 +159,7 @@ export default function Page() {
                 />
               </BlurFade>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
       <section id="events">
@@ -215,7 +215,7 @@ export default function Page() {
                   Ideal Career
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Environment Artist and QA Tester
+                  Environment Artist or QA Tester
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   I see two potential career areas that greatly interest me and
