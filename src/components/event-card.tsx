@@ -5,6 +5,7 @@ import AnimatedShinyText from "./magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
 import Marquee from "./magicui/marquee";
 import { Card } from "./ui/card";
+import HeroImageDialog from "./image-dialog";
 
 interface Props {
   title: string;
@@ -74,16 +75,14 @@ export function EventCard({
         <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border-none bg-transparent shadow-none">
           <Marquee pauseOnHover className="[--duration:20s]">
             {screenshots.map((screenshot) => (
-              <Card
-                key={screenshot}
-                className="w-[300px] h-[180px] flex-shrink-0"
-              >
-                <img
-                  src={screenshot}
-                  alt={title}
-                  className="object-cover w-full h-full rounded-lg"
-                />
-              </Card>
+              <HeroImageDialog
+              className="w-[300px] h-[180px] flex-shrink-0"
+              animationStyle="from-center"
+              imageSrc={screenshot}
+              thumbnailSrc={screenshot}
+              thumbnailAlt={title}
+              key={screenshot}
+            />
             ))}
           </Marquee>
           <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white dark:from-background"></div>
