@@ -64,21 +64,28 @@ export const DATA = {
         name: "LinkedIn",
         url: "https://www.linkedin.com/in/javier-domingo-pacheco-3171b7208/",
         icon: Icons.linkedin,
-
+        blank: true,
         navbar: true,
       },
       X: {
         name: "X",
         url: "https://x.com/MrBerguen",
         icon: Icons.x,
-
+        blank: true,
         navbar: true,
       },
       Email: {
         name: "Send Email",
         url: "mailto:javierdomingo99@gmail.com",
         icon: Icons.email,
-
+        blank: true,
+        navbar: true,
+      },
+      CV: {
+        name: "Download CV",
+        url: "assets/CV-Javier-Domingo-Pacheco.pdf",
+        icon: Icons.file,
+        blank: true,
         navbar: true,
       },
     },

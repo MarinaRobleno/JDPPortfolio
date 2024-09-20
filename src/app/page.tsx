@@ -1,5 +1,6 @@
 import { CareerCard } from "@/components/career-card";
 import { EventCard } from "@/components/event-card";
+import { Icons } from "@/components/icons";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
@@ -49,8 +50,21 @@ export default function Page() {
           <Markdown className="prose max-w-full text-pretty font-openSans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
           </Markdown>
+          <div className="mt-2 flex flex-row flex-wrap items-end gap-2 justify-center">
+            <Link
+              href="assets/CV-Javier-Domingo-Pacheco.pdf"
+              download
+              target="_blank"
+            >
+              <Badge title="Download my CV" className="flex gap-2 h-8" variant='destructive'>
+                <Icons.download className="size-3" />
+                Download my CV
+              </Badge>
+            </Link>
+          </div>
         </BlurFade>
       </section>
+
       {/* <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>

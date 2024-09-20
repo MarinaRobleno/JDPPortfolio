@@ -8,12 +8,16 @@ import {
   Trophy,
   BriefcaseBusiness,
   Phone,
-  HomeIcon
+  HomeIcon,
+  DownloadIcon,
+  FileText
 } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
 
 export const Icons = {
+  file: (props: IconProps) => <FileText {...props} />,
+  download: (props: IconProps) => <DownloadIcon {...props} />,
   home: (props: IconProps) => <HomeIcon {...props} />,
   user: (props: IconProps) => <User {...props} />,
   education: (props: IconProps) => <LibraryBig {...props} />,
