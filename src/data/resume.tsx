@@ -25,6 +25,10 @@ export const DATA = {
     "3D Animation",
     "3D Modeling",
   ],
+  languages: [
+    { name: "Spanish", level: "Native", color: "bg-blue-200 text-blue-800" },
+    { name: "English", level: "High", color: "bg-green-200 text-green-800" },
+  ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     // { href: "/blog", icon: NotebookIcon, label: "Blog" },
@@ -38,6 +42,7 @@ export const DATA = {
       href: "#education",
       icon: Icons.education,
     },
+    { name: "languages", label: "Languages", href: "#languages", icon: Icons.languages },
     { name: "skills", label: "Skills", href: "#skills", icon: Icons.skills },
     {
       name: "projects",

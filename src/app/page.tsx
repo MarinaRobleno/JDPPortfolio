@@ -116,6 +116,32 @@ export default function Page() {
           ))}
         </div>
       </section>
+      <section id="languages">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Languages</h2>
+          </BlurFade>
+          <div className="flex flex-wrap gap-1 cursor-default">
+            {DATA.languages.map((language, id) => (
+              <BlurFade
+                key={language.name}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <Badge key={language.name} className="flex gap-2 h-8">
+                  {language.name}
+                  <Badge
+                    key={language.level}
+                    variant="secondary"
+                    className={`py-0 text-[11px] h-3 ${language.color} font-bold`}
+                  >
+                    {language.level}
+                  </Badge>
+                </Badge>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>

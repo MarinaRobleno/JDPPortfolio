@@ -10,7 +10,8 @@ import {
   Phone,
   HomeIcon,
   DownloadIcon,
-  FileText
+  FileText,
+  Languages
 } from "lucide-react";
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
@@ -21,6 +22,7 @@ export const Icons = {
   home: (props: IconProps) => <HomeIcon {...props} />,
   user: (props: IconProps) => <User {...props} />,
   education: (props: IconProps) => <LibraryBig {...props} />,
+  languages: (props: IconProps) => <Languages {...props} />,
   skills: (props: IconProps) => <BicepsFlexed {...props} />,
   projects: (props: IconProps) => <FolderOpenDot {...props} />,
   events: (props: IconProps) => <Trophy {...props} />,
