@@ -21,7 +21,7 @@ export function CareerCard({ title, description, icon }: Props) {
             {title} {icon}
           </CardTitle>
 
-          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+          <Markdown className="prose max-w-full text-pretty font-openSans text-sm text-muted-foreground dark:prose-invert">
             {description}
           </Markdown>
         </div>
