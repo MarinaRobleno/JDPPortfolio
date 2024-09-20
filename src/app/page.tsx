@@ -4,6 +4,7 @@ import { Icons } from "@/components/icons";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
+import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -50,16 +51,18 @@ export default function Page() {
           <Markdown className="prose max-w-full text-pretty font-openSans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
           </Markdown>
-          <div className="mt-2 flex flex-row flex-wrap items-end gap-2 justify-center">
+          <div className="mt-10 flex flex-row flex-wrap items-end gap-2 justify-center">
             <Link
               href="assets/CV-Javier-Domingo-Pacheco.pdf"
               download
               target="_blank"
             >
-              <Badge title="Download my CV" className="flex gap-2 h-8" variant='destructive'>
-                <Icons.download className="size-3" />
-                Download my CV
-              </Badge>
+              <NeonGradientCard className="padding-0 max-w-[200px]">
+                <Badge title="Download my CV" className="flex gap-2 h-8">
+                  <Icons.download className="size-3" />
+                  Download my CV
+                </Badge>
+              </NeonGradientCard>
             </Link>
           </div>
         </BlurFade>

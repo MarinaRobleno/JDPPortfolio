@@ -19,6 +19,8 @@ export const DATA = {
     "Unity",
     "Unreal Engine",
     "Photoshop",
+    "After Effects",
+    "Premiere",
     "3D Design",
     "3D Animation",
     "3D Modeling",
