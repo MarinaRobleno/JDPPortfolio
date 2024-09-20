@@ -198,6 +198,7 @@ export default function Page() {
                     image={project.image}
                     links={project.links}
                     tags={project.tags}
+                    screenshots={project.screenshots}
                   />
                 </BlurFade>
               ))}

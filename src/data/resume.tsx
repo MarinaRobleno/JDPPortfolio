@@ -263,6 +263,11 @@ export const DATA = {
         "Platformer",
         "Third-Person",
       ],
+      screenshots: [
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2022/01/329194/highresscreenshot00001.png?itok=QSR7XpdE&timestamp=1643574580",
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2022/01/329194/highresscreenshot00005.png?itok=e53MluTB&timestamp=1643574580",
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2022/01/329194/highresscreenshot00007.png?itok=8f7uwvvA&timestamp=1643574580",
+      ],
     },
     {
       title: "Game Jam 2021 - Solitude",
@@ -287,6 +292,12 @@ export const DATA = {
         "Adventure",
         "Casual",
         "First-Person",
+      ],
+      screenshots: [
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2021/01/330280/captura_1.jpg?itok=7oikRu3P&timestamp=1612057432",
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2021/01/330280/captura_2_0.jpg?itok=IBru0R2s&timestamp=1612057432",
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2021/01/330280/captura_3_0.jpg?itok=gALlRBZb&timestamp=1612057432",
+        "https://ggj.s3.amazonaws.com/styles/game_content__wide/games/screenshots/2021/01/330280/captura_4_0.jpg?itok=5-kKP3tE&timestamp=1612057432",
       ],
     },
   ],

@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
 import AnimatedShinyText from "./magicui/animated-shiny-text";
 import { cn } from "@/lib/utils";
+import Marquee from "./magicui/marquee";
+import { Card } from "./ui/card";
 
 interface Props {
   title: string;
@@ -17,6 +19,7 @@ interface Props {
     href: string;
   }[];
   tags?: readonly string[];
+  screenshots?: readonly string[];
 }
 
 export function EventCard({
@@ -28,6 +31,7 @@ export function EventCard({
   image,
   links,
   tags,
+  screenshots,
 }: Props) {
   return (
     <li className="relative ml-10 py-4">
@@ -66,7 +70,26 @@ export function EventCard({
           </span>
         )}
       </div>
-
+      {screenshots && (
+        <div className="relative flex h-[200px] w-full flex-col items-center justify-center overflow-hidden rounded-lg border-none bg-transparent shadow-none">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {screenshots.map((screenshot) => (
+              <Card
+                key={screenshot}
+                className="w-[300px] h-[180px] flex-shrink-0"
+              >
+                <img
+                  src={screenshot}
+                  alt={title}
+                  className="object-cover w-full h-full rounded-lg"
+                />
+              </Card>
+            ))}
+          </Marquee>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white dark:from-background"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white dark:from-background"></div>
+        </div>
+      )}
       {tags && tags.length > 0 && (
         <div className="mt-2 flex flex-wrap gap-1">
           {tags?.map((tag) => (
