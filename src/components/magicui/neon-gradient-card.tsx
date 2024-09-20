@@ -117,14 +117,15 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "--card-height": `${dimensions.height}px`,
           "--card-content-radius": `${borderRadius - borderSize}px`,
           "--pseudo-element-background-image": `linear-gradient(0deg, ${neonColors.firstColor}, ${neonColors.secondColor})`,
-          "--pseudo-element-width": `${dimensions.width + borderSize * 2}px`,
-          "--pseudo-element-height": `${dimensions.height + borderSize * 2}px`,
-          "--after-blur": `${dimensions.width / 3}px`,
+          // Reducing the pseudo-element size to reduce aura size
+          "--pseudo-element-width": `${dimensions.width + borderSize}px`, // Reduced size here
+          "--pseudo-element-height": `${dimensions.height + borderSize}px`, // Reduced size here
+          "--after-blur": `${dimensions.width / 5}px`, // Reducing the blur for less diffusion
         } as CSSProperties
       }
       className={cn(
         "relative z-10 h-full w-full rounded-[var(--border-radius)]",
-        className,
+        className
       )}
       {...props}
     >
@@ -132,6 +133,7 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
         className={cn(
           "relative h-full min-h-[inherit] w-full rounded-[var(--card-content-radius)] bg-gray-100 p-0",
           "before:absolute before:-left-[var(--border-size)] before:-top-[var(--border-size)] before:-z-10 before:block",
+          // Adjust the background size and reduce the gradient spread
           "before:h-[var(--pseudo-element-height)] before:w-[var(--pseudo-element-width)] before:rounded-[var(--border-radius)] before:content-['']",
           "before:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] before:bg-[length:100%_200%]",
           "before:animate-backgroundPositionSpin",
@@ -139,7 +141,7 @@ const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
           "after:h-[var(--pseudo-element-height)] after:w-[var(--pseudo-element-width)] after:rounded-[var(--border-radius)] after:blur-[var(--after-blur)] after:content-['']",
           "after:bg-[linear-gradient(0deg,var(--neon-first-color),var(--neon-second-color))] after:bg-[length:100%_200%] after:opacity-80",
           "after:animate-backgroundPositionSpin",
-          "dark:bg-neutral-900",
+          "dark:bg-neutral-900"
         )}
       >
         {children}
