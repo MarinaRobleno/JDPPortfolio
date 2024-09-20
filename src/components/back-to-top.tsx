@@ -47,7 +47,7 @@ const BackToTop = () => {
   return (
     <Button
       className={`
-        fixed bottom-4 right-4 z-50 rounded-full p-2 shadow-lg
+        fixed bottom-4 right-4 z-50 rounded-full shadow-lg
         transition-all duration-300 ease-in-out
         ${
           isVisible

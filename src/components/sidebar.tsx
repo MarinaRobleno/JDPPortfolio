@@ -11,7 +11,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function Sidebar() {
   return (
-    <div className="fixed top-1/2 -translate-y-1/2 left-20 z-30 h-[320px] w-[200px]">
+    <div className="fixed top-1/2 -translate-y-1/2 left-20 z-30 h-[320px] w-[200px] hidden lg:block">
       <BlurFade delay={BLUR_FADE_DELAY * 10}>
         <Dock className="z-50 h-full w-full flex flex-col items-start justify-start p-4 overflow-y-auto border-none rounded-lg">
           {DATA.sidebar.map((item) => (
