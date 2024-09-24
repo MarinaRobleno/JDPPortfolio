@@ -1,5 +1,6 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import React, { useEffect, useRef, useState } from "react";
 
 interface MousePosition {
@@ -35,9 +36,9 @@ interface ParticlesProps {
   ease?: number;
   size?: number;
   refresh?: boolean;
-  color?: string;
   vx?: number;
   vy?: number;
+  children?: React.ReactNode;
 }
 function hexToRgb(hex: string): number[] {
   hex = hex.replace("#", "");
@@ -63,18 +64,19 @@ const Particles: React.FC<ParticlesProps> = ({
   ease = 50,
   size = 0.4,
   refresh = false,
-  color = "#ffffff",
   vx = 0,
   vy = 0,
+  children,
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const canvasContainerRef = useRef<HTMLDivElement>(null);
   const context = useRef<CanvasRenderingContext2D | null>(null);
   const circles = useRef<Circle[]>([]);
   const mousePosition = MousePosition();
   const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
   const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
+
+  const { theme } = useTheme();
 
   useEffect(() => {
     if (canvasRef.current) {
@@ -87,7 +89,7 @@ const Particles: React.FC<ParticlesProps> = ({
     return () => {
       window.removeEventListener("resize", initCanvas);
     };
-  }, [color]);
+  }, [theme]);
 
   useEffect(() => {
     onMouseMove();
@@ -103,17 +105,8 @@ const Particles: React.FC<ParticlesProps> = ({
   };
 
   const onMouseMove = () => {
-    if (canvasRef.current) {
-      const rect = canvasRef.current.getBoundingClientRect();
-      const { w, h } = canvasSize.current;
-      const x = mousePosition.x - rect.left - w / 2;
-      const y = mousePosition.y - rect.top - h / 2;
-      const inside = x < w / 2 && x > -w / 2 && y < h / 2 && y > -h / 2;
-      if (inside) {
-        mouse.current.x = x;
-        mouse.current.y = y;
-      }
-    }
+    mouse.current.x = mousePosition.x;
+    mouse.current.y = mousePosition.y;
   };
 
   type Circle = {
@@ -130,10 +123,10 @@ const Particles: React.FC<ParticlesProps> = ({
   };
 
   const resizeCanvas = () => {
-    if (canvasContainerRef.current && canvasRef.current && context.current) {
+    if (canvasRef.current && context.current) {
       circles.current.length = 0;
-      canvasSize.current.w = canvasContainerRef.current.offsetWidth;
-      canvasSize.current.h = canvasContainerRef.current.offsetHeight;
+      canvasSize.current.w = window.innerWidth;
+      canvasSize.current.h = window.innerHeight;
       canvasRef.current.width = canvasSize.current.w * dpr;
       canvasRef.current.height = canvasSize.current.h * dpr;
       canvasRef.current.style.width = `${canvasSize.current.w}px`;
@@ -167,7 +160,7 @@ const Particles: React.FC<ParticlesProps> = ({
     };
   };
 
-  const rgb = hexToRgb(color);
+  const rgb = hexToRgb(theme === "dark" ? "#ffffff" : '#000000');
 
   const drawCircle = (circle: Circle, update = false) => {
     if (context.current) {
@@ -191,7 +184,7 @@ const Particles: React.FC<ParticlesProps> = ({
         0,
         0,
         canvasSize.current.w,
-        canvasSize.current.h,
+        canvasSize.current.h
       );
     }
   };
@@ -210,7 +203,7 @@ const Particles: React.FC<ParticlesProps> = ({
     start1: number,
     end1: number,
     start2: number,
-    end2: number,
+    end2: number
   ): number => {
     const remapped =
       ((value - start1) * (end2 - start2)) / (end1 - start1) + start2;
@@ -229,7 +222,7 @@ const Particles: React.FC<ParticlesProps> = ({
       ];
       const closestEdge = edge.reduce((a, b) => Math.min(a, b));
       const remapClosestEdge = parseFloat(
-        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2),
+        remapValue(closestEdge, 0, 20, 0, 1).toFixed(2)
       );
       if (remapClosestEdge > 1) {
         circle.alpha += 0.02;
@@ -269,8 +262,9 @@ const Particles: React.FC<ParticlesProps> = ({
   };
 
   return (
-    <div className={className} ref={canvasContainerRef} aria-hidden="true">
-      <canvas ref={canvasRef} className="size-full" />
+    <div className={`fixed inset-0 ${className}`} aria-hidden="true">
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
