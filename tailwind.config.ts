@@ -105,6 +105,10 @@ const config = {
           "0%": { backgroundPosition: "top center" },
           "100%": { backgroundPosition: "bottom center" },
         },
+        pulse: {
+          "0%, 100%": { boxShadow: "0 0 0 0 var(--pulse-color)" },
+          "50%": { boxShadow: "0 0 0 8px var(--pulse-color)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -116,6 +120,7 @@ const config = {
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
         backgroundPositionSpin:
           "background-position-spin 3000ms infinite alternate",
+        pulse: "pulse var(--duration) ease-out infinite",
       },
     },
   },

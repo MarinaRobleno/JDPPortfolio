@@ -1,11 +1,10 @@
 import AtroposContainer from "@/components/atropos-container";
 import { CareerCard } from "@/components/career-card";
 import { EventCard } from "@/components/event-card";
-import { Icons } from "@/components/icons";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import HeroVideoDialog from "@/components/magicui/hero-video-dialog";
-import { NeonGradientCard } from "@/components/magicui/neon-gradient-card";
+import PulsatingButton from "@/components/magicui/pulsating-button";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -59,12 +58,14 @@ export default function Page() {
               download
               target="_blank"
             >
-              <NeonGradientCard className="padding-0 max-w-[200px]">
-                <Badge title="Download my CV" className="flex gap-2 h-8">
-                  <Icons.download className="size-3" />
-                  Download my CV
-                </Badge>
-              </NeonGradientCard>
+              {/* one single line, black background, white in dark mode, reduce font size */}
+              <PulsatingButton
+                duration="4s"
+                pulseColor="#B4F585"
+                className="text-sm px-4 py-2 bg-black dark:bg-white dark:text-black flex items-center gap-2"
+              >
+                📑 Download my CV
+              </PulsatingButton>
             </Link>
           </div>
         </BlurFade>
@@ -178,13 +179,13 @@ export default function Page() {
           </BlurFade>
 
           <div className="relative">
-              <HeroVideoDialog
-                className="block"
-                animationStyle="from-center"
-                videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
-                thumbnailSrc="/render.png"
-                thumbnailAlt="Render"
-              />
+            <HeroVideoDialog
+              className="block"
+              animationStyle="from-center"
+              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
+              thumbnailSrc="/render.png"
+              thumbnailAlt="Render"
+            />
           </div>
 
           {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">

@@ -11,32 +11,6 @@ import BlurFade from "./magicui/blur-fade";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Sidebar() {
-  // const scrollToSection = useCallback((targetElement: HTMLElement) => {
-  //   const duration = 500; // duration of animation in ms
-  //   const start = window.pageYOffset;
-  //   const targetPosition = targetElement.getBoundingClientRect().top + start;
-  //   const startTime =
-  //     "now" in window.performance ? performance.now() : new Date().getTime();
-
-  //   const animateScroll = (currentTime: number) => {
-  //     const timeElapsed = currentTime - startTime;
-  //     const progress = Math.min(timeElapsed / duration, 1);
-
-  //     // Ease-in-out cubic function for smooth animation
-  //     const easeInOutCubic =
-  //       progress < 0.5
-  //         ? 4 * progress * progress * progress
-  //         : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-
-  //     window.scrollTo(0, start + (targetPosition - start) * easeInOutCubic);
-
-  //     if (progress < 1) {
-  //       requestAnimationFrame(animateScroll);
-  //     }
-  //   };
-
-  //   requestAnimationFrame(animateScroll);
-  // }, []);
 
   const scrollToSection = useCallback((targetElement: HTMLElement) => {
     const duration = 500; // duration of animation in ms
