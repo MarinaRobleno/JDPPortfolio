@@ -10,6 +10,8 @@ import Meteors from "@/components/magicui/meteors";
 import Sidebar from "@/components/sidebar";
 import BackToTop from "@/components/back-to-top";
 
+import "atropos/css";
+
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",

@@ -1,3 +1,4 @@
+import AtroposContainer from "@/components/atropos-container";
 import { CareerCard } from "@/components/career-card";
 import { EventCard } from "@/components/event-card";
 import { Icons } from "@/components/icons";
@@ -34,10 +35,12 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-28 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <AtroposContainer>
+                <Avatar className="size-28 border rounded-full">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </AtroposContainer>
             </BlurFade>
           </div>
         </div>
@@ -173,15 +176,17 @@ export default function Page() {
               </div>
             </div>
           </BlurFade>
+
           <div className="relative">
-            <HeroVideoDialog
-              className="block"
-              animationStyle="from-center"
-              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
-              thumbnailSrc="/render.png"
-              thumbnailAlt="Render"
-            />
+              <HeroVideoDialog
+                className="block"
+                animationStyle="from-center"
+                videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
+                thumbnailSrc="/render.png"
+                thumbnailAlt="Render"
+              />
           </div>
+
           {/* <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
             {DATA.projects.map((project, id) => (
               <BlurFade
