@@ -85,13 +85,6 @@ export const DATA = {
         blank: true,
         navbar: true,
       },
-      X: {
-        name: "X",
-        url: "https://x.com/MrBerguen",
-        icon: Icons.x,
-        blank: true,
-        navbar: true,
-      },
       Email: {
         name: "Send Email",
         url: "mailto:javierdomingo99@gmail.com",
