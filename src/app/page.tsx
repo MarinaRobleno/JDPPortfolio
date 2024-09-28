@@ -182,7 +182,7 @@ export default function Page() {
             <HeroVideoDialog
               className="block"
               animationStyle="from-center"
-              videoSrc="https://www.youtube.com/watch?v=HGrpqS58nT0&ab_channel=KaonashiNya"
+              videoSrc="assets/render.mp4"
               thumbnailSrc="/render.png"
               thumbnailAlt="Render"
             />
@@ -321,13 +321,6 @@ export default function Page() {
                   className="text-blue-500 hover:underline"
                 >
                   LinkedIn
-                </Link>{" "}
-                or{" "}
-                <Link
-                  href={DATA.contact.social.X.url}
-                  className="text-blue-500 hover:underline"
-                >
-                  {DATA.contact.social.X.name}
                 </Link>
                 .
               </p>
