@@ -73,7 +73,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            <Particles className="full-screen-background" quantity={100} ease={800}/>
+            {/* <Particles className="full-screen-background" quantity={100} ease={800}/> */}
             {children}
             <Sidebar />
             <Navbar />
