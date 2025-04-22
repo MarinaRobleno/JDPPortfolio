@@ -9,6 +9,7 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
+import ReactCountryFlag from "react-country-flag";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -70,7 +71,29 @@ export default function Page() {
           </div>
         </BlurFade>
       </section>
-
+      <section id="education">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -96,29 +119,6 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
-          {DATA.education.map((education, id) => (
-            <BlurFade
-              key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-            >
-              <ResumeCard
-                key={education.school}
-                href={education.href}
-                logoUrl={education.logoUrl}
-                altText={education.school}
-                title={education.school}
-                subtitle={education.degree}
-                period={`${education.start} - ${education.end}`}
-              />
-            </BlurFade>
-          ))}
-        </div>
-      </section>
       <section id="languages">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -132,13 +132,7 @@ export default function Page() {
               >
                 <Badge key={language.name} className="flex gap-2 h-8">
                   {language.name}
-                  <Badge
-                    key={language.level}
-                    variant="secondary"
-                    className={`py-0 text-[11px] h-3 ${language.color} font-bold`}
-                  >
-                    {language.level}
-                  </Badge>
+                  <ReactCountryFlag countryCode={language.shortName} svg />
                 </Badge>
               </BlurFade>
             ))}
@@ -266,10 +260,12 @@ export default function Page() {
                   Environment Artist or QA Tester
                 </h2>
                 <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  I see two potential career areas that greatly interest me and
-                  where I would love the opportunity to learn and develop my
-                  skills: Environment Artist and QA Tester. Both positions are
-                  excellent entry points into the video game industry.
+                  I’m very interested in a wide range of roles, but if I had to
+                  choose where to focus my professional career, there are two
+                  areas that truly excite me and where I would love the
+                  opportunity to learn and grow: <b>Environment Artist</b> and{" "}
+                  <b>QA Tester</b>. Both positions are excellent entry points
+                  into the video game industry.
                 </p>
               </div>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">

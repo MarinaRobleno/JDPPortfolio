@@ -26,8 +26,18 @@ export const DATA = {
     "3D Modeling",
   ],
   languages: [
-    { name: "Spanish", level: "Native", color: "bg-blue-200 text-blue-800" },
-    { name: "English", level: "High", color: "bg-green-200 text-green-800" },
+    {
+      name: "Spanish",
+      level: "Native",
+      color: "bg-blue-200 text-blue-800",
+      shortName: "ES",
+    },
+    {
+      name: "English",
+      level: "High",
+      color: "bg-green-200 text-green-800",
+      shortName: "GB",
+    },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -37,16 +47,16 @@ export const DATA = {
     { name: "home", label: "Home", href: "#home", icon: Icons.home },
     { name: "about", label: "About", href: "#about", icon: Icons.user },
     {
-      name: "work",
-      label: "Work Experience",
-      href: "#work",
-      icon: Icons.work,
-    },
-    {
       name: "education",
       label: "Education",
       href: "#education",
       icon: Icons.education,
+    },
+    {
+      name: "work",
+      label: "Work Experience",
+      href: "#work",
+      icon: Icons.work,
     },
     {
       name: "languages",
